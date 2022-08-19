@@ -1,0 +1,19 @@
+Configuration:
+  name: Default
+  Appenders:
+    Console:
+      name: Console_Appender
+      target: SYSTEM_OUT
+      PatternLayout:
+        pattern: '%d [%t] %c{1.} - %highlight{%-5level:} %msg%n%throwable'
+  Loggers:
+    Logger:
+      - name: com.launchcodeconsulting.kotlingraphql
+        level: DEBUG
+        additivity: false
+        AppenderRef:
+          ref: Console_Appender
+    Root:
+      level: WARN
+      AppenderRef:
+        ref: Console_Appender
